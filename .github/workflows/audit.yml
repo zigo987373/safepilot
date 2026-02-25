@@ -2,6 +2,7 @@ name: audit
 
 on:
   pull_request:
+  workflow_dispatch:
   schedule:
     - cron: "23 3 * * 1"
 

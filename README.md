@@ -1,8 +1,8 @@
 # SafePilot
 
-[![Lint (PR)](https://img.shields.io/github/actions/workflow/status/3DCF-Labs/safepilot/lint.yml?event=pull_request&label=lint%20(PR))](https://github.com/3DCF-Labs/safepilot/actions/workflows/lint.yml)
-[![Test (PR)](https://img.shields.io/github/actions/workflow/status/3DCF-Labs/safepilot/ci.yml?event=pull_request&label=test%20(PR))](https://github.com/3DCF-Labs/safepilot/actions/workflows/ci.yml)
-[![Audit (PR)](https://img.shields.io/github/actions/workflow/status/3DCF-Labs/safepilot/audit.yml?event=pull_request&label=audit%20(PR))](https://github.com/3DCF-Labs/safepilot/actions/workflows/audit.yml)
+[![Lint](https://github.com/3DCF-Labs/safepilot/actions/workflows/lint.yml/badge.svg)](https://github.com/3DCF-Labs/safepilot/actions/workflows/lint.yml)
+[![Test](https://github.com/3DCF-Labs/safepilot/actions/workflows/ci.yml/badge.svg)](https://github.com/3DCF-Labs/safepilot/actions/workflows/ci.yml)
+[![Audit](https://github.com/3DCF-Labs/safepilot/actions/workflows/audit.yml/badge.svg)](https://github.com/3DCF-Labs/safepilot/actions/workflows/audit.yml)
 [![Docker](https://github.com/3DCF-Labs/safepilot/actions/workflows/docker.yml/badge.svg)](https://github.com/3DCF-Labs/safepilot/actions/workflows/docker.yml)
 [![Latest Release](https://img.shields.io/github/v/release/3DCF-Labs/safepilot?display_name=tag)](https://github.com/3DCF-Labs/safepilot/releases/latest)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
