@@ -8,7 +8,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 
-**SafePilot** - a self-hosted AI assistant that executes real work, safely. It turns messages into executable automation runs with SQLite persistence, job execution, 3DCF context compression, and integrations (Slack/GitHub/Notion/Linear/Jira/Todoist/Weather/Brave Search/Telegram/etc).
+**SafePilot** - a self-hosted AI assistant that executes real work, safely. It turns messages into executable automation runs with SQLite persistence, job execution, [3DCF context compression](https://github.com/3DCF-Labs/doc2dataset), and integrations (Slack/GitHub/Notion/Linear/Jira/Todoist/Weather/Brave Search/Telegram/etc).
 
 ## Features
 - Role-aware Telegram interface with owner/admin/public access. `ALLOWED_USER_ID` bootstraps the owner user, while public channels can be bound to workspace-scoped runtimes.
