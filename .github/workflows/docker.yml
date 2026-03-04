@@ -34,6 +34,7 @@ jobs:
           images: ghcr.io/3dcf-labs/safepilot
           tags: |
             type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
             type=ref,event=tag
             type=sha
 

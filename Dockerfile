@@ -15,7 +15,8 @@ RUN --mount=type=cache,target=/usr/local/cargo/registry \
 COPY src ./src
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
     --mount=type=cache,target=/app/target \
-    cargo build --release
+    cargo build --release && \
+    cp /app/target/release/safepilot /tmp/safepilot
 
 FROM debian:bookworm-slim AS runtime
 
@@ -34,7 +35,7 @@ ENV DATA_DIR=/var/lib/tg-orch \
 RUN mkdir -p /var/lib/tg-orch /var/log/tg-orch && \
     chown -R tg-orch:tg-orch /var/lib/tg-orch /var/log/tg-orch
 
-COPY --from=builder /app/target/release/safepilot /usr/local/bin/safepilot
+COPY --from=builder /tmp/safepilot /usr/local/bin/safepilot
 
 USER 10001:10001
 
