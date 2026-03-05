@@ -26,6 +26,8 @@ chmod 600 secrets/*
 
 Alternative: generate file-based secrets from `.env` automatically:
 
+You can either do Step 1 manually, or use one of the scripts below.
+
 ```bash
 ./scripts/sync-secrets-from-env.sh
 docker compose -f docker-compose.yml -f docker-compose.secrets.generated.yml up -d

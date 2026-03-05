@@ -118,6 +118,32 @@ write_secret_file() {
   chmod 600 "$path"
 }
 
+generate_master_key_file() {
+  local path="$1"
+
+  if command -v openssl >/dev/null 2>&1; then
+    openssl rand -base64 32 > "$path"
+    chmod 600 "$path"
+    return 0
+  fi
+
+  if command -v python3 >/dev/null 2>&1; then
+    python3 -c 'import base64, os; print(base64.b64encode(os.urandom(32)).decode())' > "$path"
+    chmod 600 "$path"
+    return 0
+  fi
+
+  if command -v python >/dev/null 2>&1; then
+    python -c 'import base64, os; print(base64.b64encode(os.urandom(32)).decode())' > "$path"
+    chmod 600 "$path"
+    return 0
+  fi
+
+  echo "error: cannot generate master key automatically (missing openssl/python3/python)." >&2
+  echo "error: set ORCH_MASTER_KEY in $ENV_FILE or pre-create ${path}" >&2
+  return 1
+}
+
 # env_key|file_env_key|secret_file|is_base_compose_secret(1=yes)
 MAPPINGS=$(cat <<'MAP'
 BOT_TOKEN|BOT_TOKEN_FILE|bot_token|1
@@ -223,8 +249,7 @@ if [[ -n "$master_key_value" ]]; then
   write_secret_file "master_key" "$master_key_value"
 elif [[ ! -f "${SECRETS_DIR}/master_key" ]]; then
   if [[ "$GENERATE_MASTER_KEY" -eq 1 ]]; then
-    openssl rand -base64 32 > "${SECRETS_DIR}/master_key"
-    chmod 600 "${SECRETS_DIR}/master_key"
+    generate_master_key_file "${SECRETS_DIR}/master_key"
   else
     echo "error: missing ORCH_MASTER_KEY and ${SECRETS_DIR}/master_key not found" >&2
     exit 1
