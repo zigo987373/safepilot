@@ -402,6 +402,7 @@ impl Config {
         }
         const FILE_ENVS: &[&str] = &[
             "BOT_TOKEN_FILE",
+            "TELEGRAM_BOT_TOKEN_FILE",
             "ORCH_MASTER_KEY_FILE",
             "OPENAI_API_KEY_FILE",
             "ANTHROPIC_API_KEY_FILE",
@@ -446,7 +447,16 @@ impl Config {
         sensitive_path_prefixes.sort();
         sensitive_path_prefixes.dedup();
 
-        let telegram_token = env::var("TELEGRAM_BOT_TOKEN").unwrap_or_else(|_| bot_token.clone());
+        let telegram_token_spec = SecretSpec::new(
+            "TELEGRAM_BOT_TOKEN",
+            &["TELEGRAM_BOT_TOKEN"],
+            &["TELEGRAM_BOT_TOKEN_FILE"],
+        );
+        let telegram_token = if telegram_token_spec.is_configured() {
+            telegram_token_spec.load_with_crypto(crypto.as_deref())?
+        } else {
+            bot_token.clone()
+        };
 
         let openai_api = SecretSpec::new(
             "OPENAI_API_KEY",

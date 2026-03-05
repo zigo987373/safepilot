@@ -24,6 +24,18 @@ printf '%s' 'enc-or-raw-master-key' > secrets/master_key
 chmod 600 secrets/*
 ```
 
+Alternative: generate file-based secrets from `.env` automatically:
+
+```bash
+./scripts/sync-secrets-from-env.sh
+docker compose -f docker-compose.yml -f docker-compose.secrets.generated.yml up -d
+```
+
+What this does:
+- Parses `.env` safely (without executing it)
+- Writes known secret values to `./secrets/*` with `chmod 600`
+- Generates `docker-compose.secrets.generated.yml` with extra `*_FILE` wiring for integrations
+
 Optional (recommended): set your own master key file.
 
 SafePilot enables encryption at rest by default. If you set `ORCH_MASTER_KEY_FILE`, you control
