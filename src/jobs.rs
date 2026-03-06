@@ -2525,9 +2525,7 @@ mod tests {
             "search",
         )
         .expect_err("trusted_only search should fail without trusted domains");
-        assert!(err
-            .to_string()
-            .contains("Add a trusted domain first"));
+        assert!(err.to_string().contains("Add a trusted domain first"));
     }
 
     #[test]
